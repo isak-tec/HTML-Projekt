@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>website example</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleFile.css') }}">
+    
+</head>
+
+<body class="page">
+
+    <div class="header_container">
+        <h1 class="ligth-blue" action="">Website example</h1>
+    
+        <ul class="item-list">
+            {% for item in naviList %}
+            <h1 class="ligth-blue" style="color:#53c6ff">{{item}}</h1>
+            {% endfor %}
+        </ul>  
+
+    </div>
+
+
+    <div class="container">
+
+        <h1 class="ligth-blue">Website example</h1>
+
+        <p class="counter">{{counter}}</p>
+       
+            
+        {% if current_user != None %}
+        <h2 class="welcome">Welcome to {{current_user}}</h2>
+        {% endif %}
+            
+        <div class="button-area">
+
+            <form action="/addition" method="post">
+                <button class="btn add-btn">Add 1</button>
+            </form>
+
+            <form action="/subtraction" method="post">
+                <button class="btn subtract-btn">subtract 1</button>
+            </form>
+
+            <form action="/reset" method="post">
+                <button class="btn reset-btn">Reset</button>
+            </form>
+
+        </div>
+
+        
+        <div class="login-area">
+
+            <form action="/loginattempt" method="post">
+            Username <input type="input" name="username">
+            Password <input type="input" name="password">
+            
+            
+                <button type=submit class="btn login-btn">submit</button>
+            </form>
+                
+    
+     
+        
+
+
+</body>
+
+</html>

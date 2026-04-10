@@ -1,0 +1,147 @@
+/* Page background */
+.page{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #076c03, #5bff5b);
+    height: 98vh;
+    display: flex;
+    justify-content: left;
+}
+
+/* Navigation */
+.header_container{
+    background: rgb(6, 53, 68);
+    padding: 10px;
+    width: fit-content;
+    height: auto ;
+    text-align: right;
+    position: static;
+
+    overflow-y: scroll;
+
+    /*corners*/
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    /*border*/
+    border-right: #53c6ff;
+    border-style: none solid none none;
+    border-width: 6px;
+    /* simple shadow trick */
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+}
+
+    
+/* Main card */
+.container{
+    background: rgb(28, 28, 28);
+    padding: 40px;
+
+    /*corners*/
+    width: 320px;
+    height: auto;
+
+    text-align: center;
+    position: static;
+    /* simple shadow trick */
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Title */
+.title{
+    margin-bottom: 10px;
+    font-size: 32px;
+}
+
+h1.ligth-blue{
+    color:#53c6ff;
+}
+/* Counter number */
+.counter{
+    font-size: 48px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+/* Welcome text */
+.welcome{
+    margin-bottom: 20px;
+    color: #444;
+}
+
+/* Button layout */
+.button-area{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.login-area{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+/* Buttons */
+.btn{
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    color: white;
+
+    /* smooth hover animation */
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+
+/* Hover trick */
+.btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+}
+
+
+/* Button colors */
+.add-btn{
+    background-color: #4CAF50;
+}
+
+.subtract-btn{
+    background-color: #f44336;
+}
+.reset-btn{
+    background-color: blue;
+}
+
+.logout-btn{
+    background-color: #555;
+}
+
+.login-btn{
+    background-color: #2196F3;
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+/* Login form */
+.login-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* Inputs */
+.input-field{
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.item-list{
+
+}

@@ -6,6 +6,7 @@ class Database():
                       "Isak":"Elev",
                       "Odin":"Elev1",
                       "Lucian":"Hej-nej-new-now"}
+        
         self.naviList = [
             "posts",
             "test1",

@@ -1,29 +1,34 @@
 /* Page background */
 .page{
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #076c03, #5bff5b);
+    background: rgb(28, 28, 28);
+    /* linear-gradient(135deg, #076c03, #5bff5b)*/
     height: 98vh;
     display: flex;
     justify-content: left;
 }
 
+
+
 /* Navigation */
-.header_container{
-    background: rgb(6, 53, 68);
-    padding: 10px;
-    width: fit-content;
-    height: auto ;
-    text-align: right;
+.header-container{
+    background: rgb(28, 28, 28);
+    padding: 5px;
+
+    min-width: max-content;
+    height: auto;
+
+    text-align: center;
     position: static;
 
     overflow-y: scroll;
-
+    scrollbar-color: #53c6ff rgb(36, 66, 109);
+    
     /*corners*/
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 
     /*border*/
-    border-right: #53c6ff;
     border-style: none solid none none;
     border-width: 6px;
     /* simple shadow trick */
@@ -42,6 +47,7 @@
 
     text-align: center;
     position: static;
+
     /* simple shadow trick */
     box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
 }
@@ -55,10 +61,12 @@
 h1.ligth-blue{
     color:#53c6ff;
 }
+
 /* Counter number */
 .counter{
     font-size: 48px;
     font-weight: bold;
+    color:#53c6ff;
     margin: 20px 0;
 }
 
@@ -136,12 +144,47 @@ h1.ligth-blue{
 
 
 /* Inputs */
+.post-field{
+    background-color: rgb(28, 28, 28);
+    padding: 20px;
+
+    border-radius: 10px;
+    border-color: #53c6ff;
+    border-style: dotted;
+
+    position: static;
+    width: 100vh;
+    height: 92vh;
+
+    display: flex;
+    justify-content: flex-start;
+    overflow-y: scroll;
+    scrollbar-color: #53c6ff rgb(36, 66, 109);
+}
+
+.text-area{
+    border: none;
+    border-radius: 10px;
+    background-color: #646464;
+    font-size: large;
+    min-width: 99vh;
+    min-height: 90vh;
+    font-family: 'Times New Roman', Times, serif;
+    resize: none;
+    color: #ffffff;
+    
+}
+
 .input-field{
     padding: 10px;
     border-radius: 6px;
     border: 1px solid #ccc;
+    height: fit-content;
+    width: auto ;
 }
 
-.item-list{
 
+.item-list{
+    
+    size-adjust: inherit;
 }

@@ -23,11 +23,7 @@
             </button>
         </form>
 
-        <ul class="item-list">
-            {% for item in naviList %}
-            <h1 class="ligth-blue" style="color:#53c6ff">{{item}}</h1>
-            {% endfor %}
-        </ul>  
+       
 
     </div>
 
@@ -63,9 +59,9 @@
 
     {% if current_page == "post_side" %}
     <div class="post-field">
-        <form>
+        <form action="/save" method="post">
             <input class="input-field" name="post_title">
-            <button>Post</button>
+            <button type=submit>save</button>
             <textarea class="text-area" color="#ffff" name="post_text"></textarea>
         </form>
     </div>

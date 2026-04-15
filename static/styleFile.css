@@ -94,19 +94,7 @@
     margin-bottom: 25px;
 }
 
-/* Buttons */
-.navibtn{
-    border: none;
-    width: 100px;
-    padding: 0px 10px;
-    border-radius: 6px;
-    font-size: 14px;
-    cursor: pointer;
-    color: white;
 
-    /* smooth hover animation */
-    transition: transform 0.1s, box-shadow 0.1s;
-}
 
 .btn{
     border: none;
@@ -174,7 +162,7 @@
     border-style: dotted;
 
     position: static;
-    width: 100vh;
+    max-width: 99vh;
     height: 92vh;
 
     display: flex;

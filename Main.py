@@ -51,22 +51,12 @@ async def frontpage(request):
 #include the header via templating instead of copying to every new file
 
 
-@app.post("/addition")
+@app.post("/login_button")
 async def addition(request):
     #TODO increment the value of the apps counter
-    app.ctx.db.counter +=1
+    app.ctx.db.current_page = "login"
     return redirect("/")
 
-@app.post("/subtraction")
-async def subtraction(request):
-#TODO: Add /subtraction endpoint and make it subtract counter by 1
-    app.ctx.db.counter -=1
-    return redirect("/")
-
-@app.post("/reset")
-async def reset(request):
-    app.ctx.db.counter = 0
-    return redirect("/")
 
 
 @app.post("/save")

@@ -14,11 +14,12 @@
    
 
     <div class="header-container">
-        <h1 class="ligth-blue" action="">Website example</h1>
+
+        <h1 class="light-blue" action="">Website example</h1>
 
         <form action="/postButton" method="post">
             <button class="btn menu-buttons">
-                <h1 class="ligth-blue" action="">Post</h1>
+                <h1 class="light-blue" action="">Post</h1>
             </button>
         </form>
 
@@ -33,7 +34,7 @@
 
     <div class="container">
 
-        <h1 class="ligth-blue">Website example</h1>
+        <h1 class="light-blue">Website example</h1>
 
         <p class="counter">{{counter}}</p>
        
@@ -42,27 +43,16 @@
         <h2 class="welcome">Welcome to {{current_user}}</h2>
         {% endif %}
             
-        <div class="button-area">
-
-            <form action="/addition" method="post">
-                <button class="btn add-btn">Add 1</button>
-            </form>
-
-            <form action="/subtraction" method="post">
-                <button class="btn subtract-btn">subtract 1</button>
-            </form>
-
-            <form action="/reset" method="post">
-                <button class="btn reset-btn">Reset</button>
-            </form>
-        </div>
         
         <div class="login-area">
 
             <form action="/loginattempt" method="post">
 
-            Username <input class="input-field" type="input" name="username">
-            Password <input class="input-field" type="input" name="password">
+                <p class="light-blue">username</p>
+            <input class="input-field" type="input" name="username">
+
+                <p class="light-blue">username</p>
+            <input class="input-field" type="input" name="password">
 
                 <button type=submit class="btn login-btn">submit</button>
             </form>
@@ -70,12 +60,14 @@
                 
     </div>
     
+
     {% if current_page == "post_side" %}
     <div class="post-field">
         <form>
-            <input class="input-field" >
-
-        <textarea class="text-area" color="#ffff"></textarea>
+            <input class="input-field" name="post_title">
+            <button>Post</button>
+            <textarea class="text-area" color="#ffff" name="post_text"></textarea>
+        </form>
     </div>
     {%endif%}
 

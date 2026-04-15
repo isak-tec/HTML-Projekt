@@ -15,7 +15,13 @@
 
     <div class="header-container">
         <h1 class="ligth-blue" action="">Website example</h1>
-    
+
+        <form action="/postButton" method="post">
+            <button class="btn menu-buttons">
+                <h1 class="ligth-blue" action="">Post</h1>
+            </button>
+        </form>
+
         <ul class="item-list">
             {% for item in naviList %}
             <h1 class="ligth-blue" style="color:#53c6ff">{{item}}</h1>
@@ -64,14 +70,14 @@
                 
     </div>
     
-
+    {% if current_page == "post_side" %}
     <div class="post-field">
         <form>
             <input class="input-field" >
 
         <textarea class="text-area" color="#ffff"></textarea>
     </div>
-
+    {%endif%}
 
     </body>
 

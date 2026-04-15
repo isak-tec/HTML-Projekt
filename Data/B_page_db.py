@@ -6,20 +6,11 @@ class Database():
                       "Isak":"Elev",
                       "Odin":"Elev1",
                       "Lucian":"Hej-nej-new-now"}
-        
+        self.current_page = None
         self.naviList = [
-            "posts",
             "test1",
             "test2",
             "test3",
-            "test4",
-            "test5",
-            "test6",
-            "test7",
-            "test8",
-            "test9",
-            "test10",
-            "test12",
-            "test13",
+            
         ]
        

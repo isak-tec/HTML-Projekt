@@ -52,6 +52,8 @@
     box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
 }
 
+
+
 /* Title */
 .title{
     margin-bottom: 10px;
@@ -92,9 +94,22 @@ h1.ligth-blue{
 }
 
 /* Buttons */
+.navibtn{
+    border: none;
+    width: 100px;
+    padding: 0px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    color: white;
+
+    /* smooth hover animation */
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
 .btn{
     border: none;
-    padding: 10px 18px;
+    padding: 0px 10px;
     border-radius: 6px;
     font-size: 14px;
     cursor: pointer;
@@ -108,9 +123,14 @@ h1.ligth-blue{
 /* Hover trick */
 .btn:hover{
     transform: translateY(-2px);
-    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    box-shadow: 0px 5px 10px rgba(57, 211, 249, 0.685);
 }
 
+.menu-buttons{
+    
+    background-color: rgb(28, 28, 28);
+
+}
 
 /* Button colors */
 .add-btn{
@@ -158,6 +178,7 @@ h1.ligth-blue{
 
     display: flex;
     justify-content: flex-start;
+    overflow-x: hidden;
     overflow-y: scroll;
     scrollbar-color: #53c6ff rgb(36, 66, 109);
 }

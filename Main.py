@@ -27,12 +27,15 @@ async def attach_db(app):
         app.ctx.current_user = None
 
 @app.get("/")
-@jinja.template("Html.html")
+@jinja.template("index.html")
 async def frontpage(request):
                                 #TODO add a key "counter" and a value of the apps counter to the return statements dictionary
                                 #TODO current_user should not be hardcoded, this todo demands that later login task is done
    
-    return {"naviList":app.ctx.db.naviList,"current_user":app.ctx.db.current_user, "counter":app.ctx.db.counter}
+    return {"naviList":app.ctx.db.naviList,
+            "current_user":app.ctx.db.current_user,
+            "counter":app.ctx.db.counter,
+            "current_page":app.ctx.db.current_page}
 
 #TODO: add /about endpoint, remember that you need to create a new html file to handle this
 #TODO: advanced task is to create a header.html and 
@@ -57,7 +60,13 @@ async def reset(request):
     return redirect("/")
 
 
-#TODO: Add /resetcounter endpoint, remember to add html form
+
+@app.post("/postButton")
+async def postButton(request):
+    app.ctx.db.current_page = "post_side"
+    return redirect("/")
+
+
 
 
 @app.post("/loginattempt")

@@ -36,19 +36,24 @@ async def frontpage(request):
    
     return {
             "current_user":app.ctx.db.current_user,
-            "counter":app.ctx.db.counter,
             "current_page":app.ctx.db.current_page}
 
-""" @app.get("/posts")
+@app.get("/posts")
+@jinja.template("posts.html")
+async def posts(request):
+    return {"posts":app.ctx.db.posts}
+
+"""@app.get("/posts")
 @jinja.template("posts.html")
 
 @app.get("/post(<id>)")
-@jinja.template("specific_post.html") """
+@jinja.template("specific_post.html")"""
 
 
 #TODO: add /about endpoint, remember that you need to create a new html file to handle this
 #TODO: advanced task is to create a header.html and 
 #include the header via templating instead of copying to every new file
+
 
 
 @app.post("/login_button")
@@ -57,7 +62,10 @@ async def addition(request):
     app.ctx.db.current_page = "login"
     return redirect("/")
 
-
+@app.post("/postButton")
+async def postButton(request):
+    app.ctx.db.current_page = "post_side"
+    return redirect("/")
 
 @app.post("/save")
 async def save(request):
@@ -68,14 +76,6 @@ async def save(request):
     app.ctx.db.posts[id]=post
 
     return redirect("/")
-
-@app.post("/postButton")
-async def postButton(request):
-    app.ctx.db.current_page = "post_side"
-    return redirect("/")
-
-
-
 
 @app.post("/loginattempt")
 async def loginattempt(request):
@@ -96,8 +96,6 @@ async def loginattempt(request):
     
     #TODO: insert logic here, to confirm login and set a state to current_user
     #TODO: Advanced task is to try using sanic cookies
-
-
 
 @app.post("/logout")
 async def logout(request):

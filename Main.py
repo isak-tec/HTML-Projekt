@@ -5,6 +5,8 @@ from sanic import Sanic
 from sanic.response import redirect
 from sanic_jinja2 import SanicJinja2
 from Data.B_page_db import Database
+from model.post import Post
+import uuid
 
 app = Sanic("Website_example")
 
@@ -32,34 +34,40 @@ async def frontpage(request):
                                 #TODO add a key "counter" and a value of the apps counter to the return statements dictionary
                                 #TODO current_user should not be hardcoded, this todo demands that later login task is done
    
-    return {"naviList":app.ctx.db.naviList,
+    return {
             "current_user":app.ctx.db.current_user,
             "counter":app.ctx.db.counter,
             "current_page":app.ctx.db.current_page}
+
+""" @app.get("/posts")
+@jinja.template("posts.html")
+
+@app.get("/post(<id>)")
+@jinja.template("specific_post.html") """
+
 
 #TODO: add /about endpoint, remember that you need to create a new html file to handle this
 #TODO: advanced task is to create a header.html and 
 #include the header via templating instead of copying to every new file
 
 
-@app.post("/addition")
+@app.post("/login_button")
 async def addition(request):
     #TODO increment the value of the apps counter
-    app.ctx.db.counter +=1
-    return redirect("/")
-
-@app.post("/subtraction")
-async def subtraction(request):
-#TODO: Add /subtraction endpoint and make it subtract counter by 1
-    app.ctx.db.counter -=1
-    return redirect("/")
-
-@app.post("/reset")
-async def reset(request):
-    app.ctx.db.counter = 0
+    app.ctx.db.current_page = "login"
     return redirect("/")
 
 
+
+@app.post("/save")
+async def save(request):
+    title = request.form.get("title")
+    text = request.form.get("text)")
+    post= Post(title, text)
+    id=uuid.uuid4()
+    app.ctx.db.posts[id]=post
+
+    return redirect("/")
 
 @app.post("/postButton")
 async def postButton(request):

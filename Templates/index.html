@@ -14,55 +14,56 @@
    
 
     <div class="header-container">
-        <h1 class="ligth-blue" action="">Website example</h1>
+
+        <h1 class="light-blue" action="">Website example</h1>
 
         <form action="/postButton" method="post">
             <button class="btn menu-buttons">
-                <h1 class="ligth-blue" action="">Post</h1>
+                <h1 class="light-blue" action="">Post</h1>
+            </button>
+        </form>
+        <form action="/login_button" method="post">
+            <button class="btn menu-buttons">
+                <h1 class="light-blue" action="">Login</h1>
             </button>
         </form>
 
-        <ul class="item-list">
-            {% for item in naviList %}
-            <h1 class="ligth-blue" style="color:#53c6ff">{{item}}</h1>
-            {% endfor %}
-        </ul>  
+       
 
     </div>
 
-
+    {%if current_page == "login"%}
     <div class="container">
 
-        <h1 class="ligth-blue">Website example</h1>
-
-        <p class="counter">{{counter}}</p>
-       
-            
-        {% if current_user != None %}
-        <h2 class="welcome">Welcome to {{current_user}}</h2>
-        {% endif %}
+        <h1 class="light-blue">Website example</h1>
+        
             
         
+            
         
         <div class="login-area">
 
             <form action="/loginattempt" method="post">
 
-            Username <input class="input-field" type="input" name="username">
-            Password <input class="input-field" type="input" name="password">
+                <p class="light-blue">username</p>
+            <input class="input-field" type="input" name="username">
+
+                <p class="light-blue">username</p>
+            <input class="input-field" type="input" name="password">
 
                 <button type=submit class="btn login-btn">submit</button>
             </form>
+        </div>     
         </div>
-                
-    </div>
-    
+    {%endif%}
+
     {% if current_page == "post_side" %}
     <div class="post-field">
-        <form>
-            <input class="input-field" >
-
-        <textarea class="text-area" color="#ffff"></textarea>
+        <form action="/save" method="post">
+            <input class="input-field" name="post_title">
+            <button type=submit>save</button>
+            <textarea class="text-area" color="#ffff" name="post_text"></textarea>
+        </form>
     </div>
     {%endif%}
 

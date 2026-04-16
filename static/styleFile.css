@@ -162,11 +162,11 @@
     border-style: dotted;
 
     position: static;
-    max-width: 99vh;
+    min-width: 100vh;
     height: 92vh;
 
     display: flex;
-    justify-content: flex-start;
+    justify-content: start;
     overflow-x: hidden;
     overflow-y: scroll;
     scrollbar-color: #53c6ff rgb(36, 66, 109);
@@ -177,6 +177,7 @@
     border-radius: 10px;
     background-color: #646464;
     font-size: large;
+
     min-width: 99vh;
     min-height: 90vh;
     font-family: 'Times New Roman', Times, serif;

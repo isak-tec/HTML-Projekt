@@ -5,7 +5,7 @@ from sanic import Sanic
 from sanic.response import redirect
 from sanic_jinja2 import SanicJinja2
 from Data.B_page_db import Database
-from model.post import Post
+from Model.post import Post
 import uuid
 
 app = Sanic("Website_example")
